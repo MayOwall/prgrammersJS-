@@ -123,3 +123,41 @@ arr["key"] = "value";
 console.log(arr);
 //다만 위와같이 값을 추가했을 때, 기존 배열의 길이는 바뀌지 않음.(배열이 JS에서 특수한 객체이기 때문)
 console.log(arr.length);
+
+
+/*---------------------------------------------------*/
+//객체.
+//객체 생성 방법
+//1. new Object()를 통해 빈 객체 생성하기.
+const obj1 = new Object();
+//2. 중괄호를 통해 빈 객체 생성하기.
+const obj2 = {};
+//3. key, value입력을 통해 초기화값이 있는 객체 생성하기.
+const obj3 = {name: '오월', status: '졸유를 빙자한 백수'};
+
+
+//객체 값 추가 방법.
+const obj4 = {name: '객체 값 추가하기'};
+//1. obj[key값] = value;
+obj4['방법1'] = '대괄호 이용하기';
+//2. obj.key값 = value;
+obj4.방법2 = '점을 이용하기';
+
+//객체 값 삭제 방법 : 'delete'
+const obj5 = {name1: '객체', name2: '값 ', name3: '삭제하기'};
+delete obj5.name3;
+
+//객체 내 특정 key 유무 확인하기 : 'in'
+console.log('name1' in obj5);
+console.log('name3' in obj5);
+
+//객체의 key 집합을 알아내는 방법 : 'Object.keys()'
+console.log(Object.keys(obj5));
+
+//객체의 value 집합을 알아내는 방법 : 'Object.values()'
+console.log(Object.values(obj5));
+
+//객체를 순회하는 방법 : 'for in'문법
+for(const key in obj5) {
+  console.log(key, obj5[key]);
+};
