@@ -17,12 +17,6 @@ const arr6 = Array.from(Array(5), function (v, k) {
   return k + 1;
 });
 
-console.log(arr1);
-console.log(arr2);
-console.log(arr5);
-console.log(arr3);
-console.log(arr4);
-console.log(arr6);
 
 
 /*---------------------------------------------------*/

@@ -1,3 +1,4 @@
+document.write('2. Linked List(연결 리스트)<br>');
 /* 추가와 삭제가 반복되는 로직이라면, 어떤 알고리즘이 적합할까?
 - 배열(array)는 추가, 삭제가 반복되면 반복될수록 시간복잡도가 증가되므로, 위와같은 로직에서는 추천되지 않음.
 - '연결 리스트' :
@@ -49,3 +50,54 @@
   메모리를 아껴 쓸 수 있다.
   중간에서 탐색을 하더라도, 환형구조 덕분에 한바퀴를 온전히 탐색할 수 있다.
 */
+
+//연결 리스트 작성하기
+//Node & SingleLinkedList 작성
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class SingleLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  };
+
+  find(value) {
+    let currNode = this.head;
+    while(currNode.value !== value) {
+      currNode = currNode.next;
+    };
+    return currNode;
+  };
+
+  append(newValue) {
+    let newNode = new Node(newValue);
+    if(this.head === null) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
+    };
+  };
+
+  insert(node, newValue) {
+    const newNode = new Node(newValue);
+    newNode.next = node.next;
+    node.next = newNode;
+  };
+
+  remove(value) {
+    let prevNode = this.head;
+    while(prevNode !== value) {
+      prevNode = prevNode.next;
+    };
+    if (prevNode.next !== null) {
+      prevNode.next = prevNode.next.next;
+    };
+  };
+};
